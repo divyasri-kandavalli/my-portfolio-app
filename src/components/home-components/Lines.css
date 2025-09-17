@@ -1,0 +1,40 @@
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Each falling streak */
+.line .drop {
+  position: absolute;
+  height: 7vh; /* taller streak for smoother flow */
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom,transparent, #6cfcb5, #F0FF6C);
+  animation: run 8s linear infinite; /* slower */
+}
+
+/* stagger delays so streaks don’t overlap perfectly */
+.line .drop.delay1 {
+  animation-delay: 2s;
+}
+.line .drop.delay2 {
+  animation-delay: 4s;
+}
+
+/* Each line itself also gets a small offset */
+.line:nth-child(odd) .drop {
+  animation-delay: 1s;
+}
+.line:nth-child(even) .drop {
+  animation-delay: 3s;
+}
+
+@keyframes run {
+  0% { top: -60%; }
+  100% { top: 110%; }
+}

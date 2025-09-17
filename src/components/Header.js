@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import LogoImage from '../assets/images/Logo-3.png'
 export default function Header() {
   return (
     <nav className=" fixed w-full z-20 top-0 start-0 mt-3">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto ">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="https://demo.awaikenthemes.com/pixion/wp-content/uploads/2025/02/logo.svg"
-            className="h-10 w-auto"
+            src={LogoImage}
+            className=" w-auto h-auto"
             alt="Logo"
           />
         </Link>
